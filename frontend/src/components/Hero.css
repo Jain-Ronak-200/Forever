@@ -1,0 +1,13 @@
+.imgg{
+    width: 50%;
+}
+@media (max-width: 768px) {
+    .imgg{
+        width: 50%;
+    }
+}
+@media (max-width: 744px) {
+    .imgg{
+        width: 100%;
+    }
+}
