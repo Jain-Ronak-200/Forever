@@ -22,7 +22,7 @@
 import React, { useContext } from 'react';
 // import { ShopContext } from '../context/Shopcontext';
 import { Link } from 'react-router-dom';
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/ShopContext'
 
 const Productitem = ({ id = 'unknown', image = ['/default-image.jpg'], name = 'Unknown Product', price = 0 }) => {
     const { currency } = useContext(ShopContext);

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Title from '../components/Title';
 import { assets } from '../assets/assets';
 import CartTotel from '../components/CartTotel';
-import { ShopContext } from '../context/ShopContext';
+import { ShopContext } from '../context/ShopContext'
 
 const Cart = () => {
 
