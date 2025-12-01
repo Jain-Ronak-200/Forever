@@ -9,7 +9,7 @@
 //   const fecthList =async()=>{
 //     try {
       
-//       const response = await axios.get('http://localhost:4000/api/product/list',{headers:{token}})
+//       const response = await axios.get('https://forever-nine-xi.vercel.app/api/product/list',{headers:{token}})
 //       // console.log(response.data)
 //       if(response.data.success){
 //         setList(response.data.products)
@@ -28,7 +28,7 @@
 //   }
 //   const removeProduct = async(id)=>{
 //     try {
-//       let response = await axios.post('http://localhost:4000/api/product/remove',{id},{headers:{token}})
+//       let response = await axios.post('https://forever-nine-xi.vercel.app/api/product/remove',{id},{headers:{token}})
 //       if(response.data.success){
 //         toast.success(response.data.message)
 
@@ -98,7 +98,7 @@ const List = ({ token }) => {
 
   const fetchList = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/product/list', { headers: { token } });
+      const response = await axios.get('https://forever-nine-xi.vercel.app/api/product/list', { headers: { token } });
       if (response.data.success) {
         setList(response.data.products);
       } else {
@@ -112,7 +112,7 @@ const List = ({ token }) => {
 
   const removeProduct = async (id) => {
     try {
-      let response = await axios.post('http://localhost:4000/api/product/remove', { id }, { headers: { token } });
+      let response = await axios.post('https://forever-nine-xi.vercel.app/api/product/remove', { id }, { headers: { token } });
       if (response.data.success) {
         toast.success(response.data.message);
         // Update the state directly to remove the product

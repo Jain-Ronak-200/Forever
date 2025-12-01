@@ -44,7 +44,7 @@ const PlaceOrder = () => {
       handler: async(response)=>{
         console.log(response);
         try {
-          const {data} = await axios.post('http://localhost:4000/api/order/verifyRazorpay',response,{headers:{token}})
+          const {data} = await axios.post('https://forever-nine-xi.vercel.app/api/order/verifyRazorpay',response,{headers:{token}})
           if (data.success) {
             navigate('/orders')
             setCartItems({})
@@ -89,7 +89,7 @@ const PlaceOrder = () => {
       switch(method){
         //api calls for cod
         case 'cod':
-          const response = await axios.post('http://localhost:4000/api/order/place',orderData,{headers:{token}})
+          const response = await axios.post('https://forever-nine-xi.vercel.app/api/order/place',orderData,{headers:{token}})
           console.log(response.data)
           if(response.data.success){
             setCartItems({})
@@ -100,7 +100,7 @@ const PlaceOrder = () => {
           }
           break;
           case 'stripe':
-            const responseStripe=await axios.post('http://localhost:4000/api/order/stripe',orderData,{headers:{token}});
+            const responseStripe=await axios.post('https://forever-nine-xi.vercel.app/api/order/stripe',orderData,{headers:{token}});
             if(responseStripe.data.success){
               const{session_url}=responseStripe.data;
               window.location.replace(session_url)
@@ -117,7 +117,7 @@ const PlaceOrder = () => {
           break;
           case 'razorpay':
             //check a new script tag for razorpay index.html
-            const responseRazorpay = await axios.post('http://localhost:4000/api/order/razorpay',orderData,{headers:{token}})
+            const responseRazorpay = await axios.post('https://forever-nine-xi.vercel.app/api/order/razorpay',orderData,{headers:{token}})
             if (responseRazorpay.data.success) {
               // console.log(responseRazorpay.data.order)
               initPay(responseRazorpay.data.order)

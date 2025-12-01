@@ -13,7 +13,7 @@ const Orders = () => {
       if(!token){
         return null
       }
-      const response = await axios.post('http://localhost:4000/api/order/userorders' ,{},{headers:{token}});
+      const response = await axios.post('https://forever-nine-xi.vercel.app/api/order/userorders' ,{},{headers:{token}});
       // console.log(response.data);
       if(response.data.success){
         let allordersItems = []

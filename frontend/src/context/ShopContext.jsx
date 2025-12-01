@@ -47,7 +47,7 @@ import axios from 'axios';
 
          if (token) {
             try {
-                await axios.post('http://localhost:4000/api/cart/add',{itemId,size},{headers:{token}})
+                await axios.post('https://forever-nine-xi.vercel.app/api/cart/add',{itemId,size},{headers:{token}})
                 // console.log(userId)
             } catch (error) {
                 console.log(error)
@@ -103,7 +103,7 @@ import axios from 'axios';
         setCartItems(cartdata)
         if(token){
             try {
-                await axios.post('http://localhost:4000/api/cart/update',{itemId,size,quantity},{headers:{token}})
+                await axios.post('https://forever-nine-xi.vercel.app/api/cart/update',{itemId,size,quantity},{headers:{token}})
             } catch (error) {
                 console.log(error)
                 toast.error(error.message)
@@ -116,7 +116,7 @@ import axios from 'axios';
     const getUserCart = async(token)=>{
         try {
             
-            const response = await axios.post('http://localhost:4000/api/cart/get', {}, { headers: { token } })
+            const response = await axios.post('https://forever-nine-xi.vercel.app/api/cart/get', {}, { headers: { token } })
             if(response.data.success){
                 setCartItems(response.data.cartData)
             }
@@ -133,7 +133,7 @@ import axios from 'axios';
 // after the backend
 const getProductData = async()=>{
     try {
-        const response = await axios.get('http://localhost:4000/api/product/list')
+        const response = await axios.get('https://forever-nine-xi.vercel.app/api/product/list')
         // console.log(response.data)
         if (response.data.success) {
             // console.log(response.data.products)

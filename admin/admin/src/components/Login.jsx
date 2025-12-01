@@ -11,7 +11,7 @@ const Login = ({setToken}) => {
     const onSubmitHandler = async(event)=>{
         try {
             event.preventDefault();
-            const response = await axios.post('http://localhost:4000/api/user/admin',{email,password});
+            const response = await axios.post('https://forever-nine-xi.vercel.app/api/user/admin',{email,password});
             // console.log(response)
             if(response.data.success){
                 setToken(response.data.token)
