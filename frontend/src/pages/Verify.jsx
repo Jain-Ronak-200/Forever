@@ -17,7 +17,7 @@ const Verify = () => {
                 return null
                 
             }
-            const response = await axios.post('https://forever-nine-xi.vercel.app/api/order/verifyStripe',{success,orderId},{headers:{token}})
+            const response = await axios.post('https://forever-nine-xi.vercel.app/api/order/verify',{success,orderId},{headers:{token}})
             console.log(response.data)
             if (response.data.success) {
                 setCartItems({})
